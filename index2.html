@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <title>بوابة تسجيل البطاقة</title>
+    <!-- روابط الخطوط والأيقونات -->
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- ربط ملف CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- إطار الهاتف -->
+    <div class="phone-frame">
+        <div class="power-button"></div>
+        <div class="screen">
+            <!-- شريط الحالة -->
+            <div class="status-bar">
+                <span id="battery">
+                    <i class="material-icons" id="batteryIcon">battery_full</i>
+                    <span>100%</span>
+                </span>
+                <span id="realTime">
+                    <i class="material-icons">schedule</i>
+                    <span>12:00:00</span>
+                </span>
+                <span>
+                    <i class="material-icons">signal_cellular_alt</i>
+                    <i class="material-icons">wifi</i>
+                    4G
+                </span>
+            </div>
+            
+            <!-- المحتوى الرئيسي -->
+            <div class="content">
+                <!-- الشعار -->
+                <img src="logo.png" alt="شعار" class="logo">
+                
+                <!-- العد التنازلي -->
+                <div class="countdown">
+                    <i class="material-icons">timer</i>
+                    <span>سيتم التوجيه خلال</span>
+                    <span id="timer" class="timer-value">30</span>
+                    <span>ثواني</span>
+                </div>
+
+                <!-- الأزرار الرئيسية -->
+                <button class="main-btn" onclick="redirectToCard()">
+                    <i class="material-icons">credit_card</i>
+                    تسجيل البطاقة
+                </button>
+
+                <div class="contact-buttons">
+                    <button class="icon-btn whatsapp-btn" onclick="openWhatsApp()">
+                        <i class="material-icons">whatsapp</i>
+                    </button>
+
+                    <button class="icon-btn email-btn" onclick="openEmail()">
+                        <i class="material-icons">mail</i>
+                    </button>
+                </div>
+
+                <!-- زر الإعدادات -->
+                <button class="settings-btn" onclick="toggleSettings()">
+                    <i class="material-icons">settings</i>
+                    <span>الإعدادات</span>
+                </button>
+
+                <!-- التذييل -->
+                <div class="footer">
+                    <i class="material-icons">code</i>
+                    تم التطوير بواسطة: حــامد هــزاع @2025
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- لوحة الإعدادات -->
+    <div class="settings-panel" id="settingsPanel">
+        <h3 style="margin-bottom: 15px; color: var(--primary);">إعدادات الدومين</h3>
+        <input type="url" 
+               id="domainInput"
+               class="main-btn"
+               placeholder="http://t.com"
+               style="background: #f5f5f5; color: #333; text-align: center;">
+        
+        <button class="main-btn" onclick="updateDomain()" style="margin-top: 15px;">
+            <i class="material-icons">save</i>
+            حفظ التغييرات
+        </button>
+    </div>
+
+    <!-- حاوية الكونفيتي -->
+    <div class="confetti" id="confettiContainer"></div>
+
+    <!-- طبقة الإغلاق -->
+    <div id="settingsOverlay" class="settings-overlay" onclick="closeSettings()"></div>
+
+    <!-- ربط ملف JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
